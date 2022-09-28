@@ -1,5 +1,7 @@
 package org.asacoa.security;
 
+import org.asacoa.log.Log;
+
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
@@ -19,16 +21,20 @@ public class AESdecrypt {
         try {
             cipher = Cipher.getInstance("AES");
         } catch (NoSuchAlgorithmException e) {
-
+            Log.error(e.toString());
+            e.printStackTrace();
             return null;
         } catch (NoSuchPaddingException e) {
+            Log.error(e.toString());
+            e.printStackTrace();
             return null;
         }
 
         try {
             cipher.init(Cipher.DECRYPT_MODE, keySpec);
         } catch (InvalidKeyException e) {
-
+            Log.error(e.toString());
+            e.printStackTrace();
             return null;
         }
 
@@ -36,9 +42,11 @@ public class AESdecrypt {
             Base64.Decoder encoder = Base64.getDecoder();
             return new String(cipher.doFinal(encoder.decode(target)));
         } catch (IllegalBlockSizeException e) {
-            System.out.println("err");
+            Log.error(e.toString());
+            e.printStackTrace();
         } catch (BadPaddingException e) {
-
+            Log.error(e.toString());
+            e.printStackTrace();
         }
         return null;
     }

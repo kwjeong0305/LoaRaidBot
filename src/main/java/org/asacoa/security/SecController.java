@@ -1,11 +1,12 @@
 package org.asacoa.security;
 
+import org.asacoa.log.Log;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
 import static org.asacoa.security.AESdecrypt.decrypt;
-import static org.asacoa.security.AESencrypt.encrypt;
 
 public class SecController {
     private String key = "";
@@ -28,11 +29,11 @@ public class SecController {
 
         key = prop.getProperty("key");
         token = prop.getProperty("token");
-    }
 
-
-    public String TokenEncrypt() {
-        return encrypt(token.getBytes(), key.getBytes());
+        // key & token is empty exception
+        if (key.equals("") || token.equals("")) {
+            throw new IOException("key or token is empty");
+        }
     }
 
     public String TokenDecrypt() {

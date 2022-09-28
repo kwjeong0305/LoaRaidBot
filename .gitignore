@@ -1,5 +1,9 @@
 /.gradle
 /.idea
+/build
+
+#security
+/src/main/resources/conf/token.properties
 
 ### Java template
 # Compiled class file

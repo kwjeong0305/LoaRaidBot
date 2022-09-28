@@ -7,6 +7,7 @@ import org.asacoa.jda.listener.CommandListener;
 import org.asacoa.jda.listener.InitListener;
 import org.asacoa.jda.listener.JoinListener;
 import org.asacoa.jda.listener.LeaveListener;
+import org.asacoa.log.Log;
 import org.asacoa.security.SecController;
 import org.json.JSONObject;
 
@@ -23,6 +24,7 @@ public class BotBuilder {
                     .addEventListeners(new InitListener(), new JoinListener(), new CommandListener(), new LeaveListener())
                     .build();
         } catch (Exception e) {
+            Log.error(e.toString());
             e.printStackTrace();
         }
     }
