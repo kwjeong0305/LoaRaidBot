@@ -2,32 +2,41 @@
   "RaidCharter": {
     "channel": "",
     "LoaCharter": {
-      "Supporter": [],
-      "Dealer": []
+      "MemberID": {
+        "Supporter": [],
+        "Dealer": []
+      }
     },
-    "Abrelshud ": [
+    "아브렐슈드 ": [
       {
+        "minLevel": {"노말" : 1520, "하드" : 1520, "어려움" : 1520},
         "difficulty": "",
         "Supporter": [],
         "Dealer": []
       }
     ],
-    "Illiakan": [
+    "일리아칸": [
       {
+        "minLevel": [
+          1580,
+          1600
+        ],
         "difficulty": "",
         "Supporter": [],
         "Dealer": []
       }
     ],
-    "Heroic": [
+    "도비스도디언": [
       {
         "Supporter": [],
         "Dealer": []
       }
     ],
-    "Kakul-Saydon": [
+    "쿠크세이튼": [
       {
-        "difficulty": "",
+        "minLevel": [
+          1475, 0
+        ],
         "Supporter": [],
         "Dealer": []
       }
